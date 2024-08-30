@@ -1,0 +1,25 @@
+{% extends 'layout/base.html' %}
+
+{% block css %}
+    
+{% endblock css %}
+
+{% block content %}
+    
+    {% for item in articles %}
+        <div class="container">
+            <div class="row">
+            
+                <div class="col">
+                    <h2>{{item.title}}</h2>
+                    <p>
+                    {{item.content|truncatechars:150}}
+                    </p>
+                    <a href="{% url 'article' item.id %}">Read Article</a>
+                </div>
+            </div>
+        </div>    
+    {% endfor %}
+        
+{% endblock content %}
+    
